@@ -16,15 +16,15 @@ if __name__ == "__main__":
     # suite.addTests(tests.loadTestsFromModule(test))
     # suite_create_account.addTests(tests.loadTestsFromTestCase(MyTestCase))
     # alltestNames = tests.getTestCaseNames(MyTestCase)
-    suite_create_account.addTests(tests.loadTestsFromName("test.FinalProject.test_createAccountFail"))
+    # suite_create_account.addTests(tests.loadTestsFromName("test.FinalProject.test_createAccountFail"))
     # suite_create_account.addTests(tests.loadTestsFromName("test.FinalProject.test_createAcountSuccess"))
     # suite_create_account.addTests(tests.loadTestsFromModule("test.FinalProject.test_submit_newsletter"))
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap02))
-    suite_create_account.addTests(tests.loadTestsFromName("test.FinalProject.test_createAccountSuccessfully"))
+    # suite_create_account.addTests(tests.loadTestsFromName("test.FinalProject.test_createAccountSuccessfully"))
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap03))
-    suite_create_account.addTests(tests.loadTestsFromName("test.FinalProject.test_submit_newsletter"))
+    # suite_create_account.addTests(tests.loadTestsFromName("test.FinalProject.test_submit_newsletter"))
 
 
 
