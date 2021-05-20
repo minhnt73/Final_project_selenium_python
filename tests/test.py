@@ -4,6 +4,7 @@ import chromedriver_autoinstaller
 from pages.home_page import HomePage
 from pages.sign_in_page import SignInPage
 from pages.create_account_page import CreateAccountPage
+from pages.newsletter_page import NewsLetterPage
 # from selenium.webdriver.support.ui import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC
 # from selenium.webdriver.common.by import By
@@ -42,6 +43,14 @@ class FinalProject(unittest.TestCase):
                        'HA NOI', '10000', 'abcd', '01928377466', '090398772643')
         TC.click_button()
         TC.result_mess()
+
+    def test_submit_newsletter(self):
+        TC = NewsLetterPage(self.driver)
+        TC.wait(10)
+        TC.enter_email('dhhdaj@gmail.com')
+        TC.click_submit()
+        TC.display_mess()
+
 
 
     def tearDown(self) -> None:

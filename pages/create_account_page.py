@@ -42,4 +42,6 @@ class CreateAccountPage(Base):
 
     def result_mess(self):
         mess = self.get_text(CreateAccountLct.result_mess)
-        unittest.TestCase().assertEqual(mess,"Welcome to your account. Here you can manage all of your personal information and orders.", "False")
+        unittest.TestCase().assertEqual(mess,
+                                        "Welcome to your account. Here you can manage all of your personal information and orders.",
+                                        "False")
