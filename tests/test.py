@@ -24,7 +24,7 @@ class FinalProject(unittest.TestCase):
         TC.click_sigin_btn()
 
         TC = SignInPage(self.driver)
-        TC.enter_email_addr('dgdhfh@gmail.com')
+        TC.enter_email_addr('dgdghfd@gmail.com')
         TC.click_create_btn()
 
     def test_createAcountSuccess(self):
@@ -34,10 +34,11 @@ class FinalProject(unittest.TestCase):
         TC.wait(10)
 
         TC = SignInPage(self.driver)
-        TC.enter_email_addr('fhgfgf127773@gmail.com')
+        TC.enter_email_addr('gfgdfga@gmail.com')
         TC.click_create_btn()
 
         TC = CreateAccountPage(self.driver)
+        TC.wait(10)
         TC.click_value()
         TC.enter_value('nguyen', 'minh', 'Truongminh1990', 'abc', 'hoang', 'lqa', '36 Nguyen Co Thach', '37 Tay Tuu',
                        'HA NOI', '10000', 'abcd', '01928377466', '090398772643')
@@ -47,7 +48,7 @@ class FinalProject(unittest.TestCase):
     def test_submit_newsletter(self):
         TC = NewsLetterPage(self.driver)
         TC.wait(10)
-        TC.enter_email('dhhdaj@gmail.com')
+        TC.enter_email('sreegg@gmail.com')
         TC.click_submit()
         TC.display_mess()
 
