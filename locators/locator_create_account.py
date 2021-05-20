@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 class CreateAccountLct:
     tittle_radio_mr = '//*[@id="id_gender1"]'
     tittle_radio_mrs = '//input[@id = "id_gender2"]'
