@@ -1,28 +1,47 @@
 import unittest
 from selenium import webdriver
 import chromedriver_autoinstaller
-from pages import home_page as _home_page
-from pages import authentication as _authentication_page
-import time
-from selenium.webdriver.support import expected_conditions as EC
+from pages.home_page import HomePage
+from pages.sign_in_page import SignInPage
+from pages.create_account_page import CreateAccountPage
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+# from selenium.webdriver.common.by import By
 
 
-class CreateAccount(unittest.TestCase):
+class FinalProject(unittest.TestCase):
     def setUp(self) -> None:
         chromedriver_autoinstaller.install()
         self.driver = webdriver.Chrome()
-        self.driver.implicitly_wait(10)
-        self.driver.maximize_window()
-        self.driver.get('http://automationpractice.com/')
+        self.driver.get('http://automationpractice.com/index.php')
+        # WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="header"]/div[2]/div/div/nav/div[1]/a')))
 
     def test_createAccountFail(self):
-        home_page = _home_page(self.driver)
-        home_page.wait(5)
-        home_page.click_sign_in()
-        authentication_page = _authentication_page(self.driver)
-        authentication_page.enter_email('minh@gmail.com')
-        authentication_page.wait(5)
-        authentication_page.create_account()
+        TC = HomePage(self.driver)
+        TC.wait(10)
+
+        TC.click_sigin_btn()
+
+        TC = SignInPage(self.driver)
+        TC.enter_email_addr('dgdhfh@gmail.com')
+        TC.click_create_btn()
+
+    def test_createAcountSuccess(self):
+        TC = HomePage(self.driver)
+        TC.wait(10)
+        TC.click_sigin_btn()
+        TC.wait(10)
+
+        TC = SignInPage(self.driver)
+        TC.enter_email_addr('fhgfgf127773@gmail.com')
+        TC.click_create_btn()
+
+        TC = CreateAccountPage(self.driver)
+        TC.click_value()
+        TC.enter_value('nguyen', 'minh', 'Truongminh1990', 'abc', 'hoang', 'lqa', '36 Nguyen Co Thach', '37 Tay Tuu',
+                       'HA NOI', '10000', 'abcd', '01928377466', '090398772643')
+        TC.click_button()
+        TC.result_mess()
 
     def tearDown(self) -> None:
         self.driver.quit()
