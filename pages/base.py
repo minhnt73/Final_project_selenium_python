@@ -24,4 +24,6 @@ class Base:
 
     def get_text(self,locator):
         return self.find_by_xpath(locator).text
+    # def assert_equal(self,actual, expected, errorMessage):
+    #     return self.get_text().assertEqual(actual, expected, errorMessage)
 
