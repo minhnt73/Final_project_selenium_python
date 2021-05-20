@@ -43,15 +43,6 @@ class FinalProject(unittest.TestCase):
         TC.click_button()
         TC.result_mess()
 
-    def test_createAccountFail(self):
-            TC = HomePage(self.driver)
-            TC.wait(10)
-
-            TC.click_sigin_btn()
-
-            TC = SignInPage(self.driver)
-            TC.enter_email_addr('dgdhfh@gmail.com')
-            TC.click_create_btn()
 
     def tearDown(self) -> None:
         self.driver.quit()
