@@ -33,7 +33,7 @@ class CreateAccountLct:
 
 
 
-=======
+
 class CreateAccountLct:
     tittle_radio_mr = '//*[@id="id_gender1"]'
     tittle_radio_mrs = '//input[@id = "id_gender2"]'
@@ -68,4 +68,4 @@ class CreateAccountLct:
 
 
 
->>>>>>> b53337b4633fe437117692c2688a10454d839264
+
