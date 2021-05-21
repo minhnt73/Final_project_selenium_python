@@ -18,8 +18,8 @@ class ContactPage(Base):
         self.write(ContactUs.order_txb, text2)
         self.write(ContactUs.message_txb,text3)
 
-    # def select_file(self):
-    #     self.click(ContactUs.attach_file_select)
+    def select_file(self, text):
+        self.write(ContactUs.attach_file_select, text)
 
     def click_send(self):
         self.click(ContactUs.send_btn)

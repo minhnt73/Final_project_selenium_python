@@ -23,7 +23,7 @@ class SubmitContactForm(unittest.TestCase):
         TC.click_contact_us_btn()
         TC.select_value()
         TC.enter_value('abc@gmail.com', 'mau do', 'abcdef')
-        # TC.select_file()
+        TC.select_file("C:\\Users\\LQA\\PycharmProjects\\Final_POM\\locators\\search.py")
         TC.click_send()
 
         print('Test completed submit contact....')
