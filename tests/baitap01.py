@@ -28,6 +28,8 @@ class FinalProject(unittest.TestCase):
         TC.click_create_btn()
         TC.display_result()
 
+        print('Test baitap01 is completed...')
+
 
     def tearDown(self) -> None:
         self.driver.quit()

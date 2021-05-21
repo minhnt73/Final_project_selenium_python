@@ -3,6 +3,8 @@ import unittest
 from tests import baitap01
 from tests import baitap02
 from tests import baitap03
+from tests import baitap04
+from tests import baitap05
 
 if __name__ == "__main__":
     # create the suite from the test classes
@@ -13,6 +15,7 @@ if __name__ == "__main__":
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap01))
 
+
     # suite.addTests(tests.loadTestsFromModule(test))
     # suite_create_account.addTests(tests.loadTestsFromTestCase(MyTestCase))
     # alltestNames = tests.getTestCaseNames(MyTestCase)
@@ -21,10 +24,16 @@ if __name__ == "__main__":
     # suite_create_account.addTests(tests.loadTestsFromModule("test.FinalProject.test_submit_newsletter"))
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap02))
+
     # suite_create_account.addTests(tests.loadTestsFromName("test.FinalProject.test_createAccountSuccessfully"))
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap03))
+
     # suite_create_account.addTests(tests.loadTestsFromName("test.FinalProject.test_submit_newsletter"))
+    suite_create_account.addTests(tests.loadTestsFromModule(baitap04))
+
+    suite_create_account.addTests(tests.loadTestsFromModule(baitap05))
+
 
 
 

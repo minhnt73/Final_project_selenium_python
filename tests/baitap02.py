@@ -23,7 +23,7 @@ class FinalProject(unittest.TestCase):
         TC.wait(10)
 
         TC = SignInPage(self.driver)
-        TC.enter_email_addr('fghgtt@gmail.com')
+        TC.enter_email_addr('dfhfh@gmail.com')
         TC.click_create_btn()
 
         TC = CreateAccountPage(self.driver)
@@ -33,6 +33,8 @@ class FinalProject(unittest.TestCase):
                        'HA NOI', '10000', 'abcd', '01928377466', '090398772643')
         TC.click_button()
         TC.result_mess()
+
+        print('Test baitap02 is completed...')
 
     def tearDown(self) -> None:
         self.driver.quit()

@@ -16,7 +16,7 @@ class TestSearch(unittest.TestCase):
         TC.enter_value_search('dress')
         # TC = Base(self.driver)
         TC.clear_value_search()
-        TC.wait(10)
+        print('Test baitap05 is completed....')
 
     def test_tearDown(self):
         self.driver.quit()

@@ -21,9 +21,11 @@ class FinalProject(unittest.TestCase):
     def test_submit_newsletter(self):
         TC = NewsLetterPage(self.driver)
         TC.wait(10)
-        TC.enter_email('dghfh@gmail.com')
+        TC.enter_email('srhgj@gmail.com')
         TC.click_submit()
         TC.display_mess()
+
+        print('Test baitap03 is completed...')
 
     def tearDown(self) -> None:
         self.driver.quit()
