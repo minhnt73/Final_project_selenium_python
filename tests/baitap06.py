@@ -26,6 +26,13 @@ class TestSearchHint(unittest.TestCase):
         TC.display_hints()
         time.sleep(5)
 
+    def test_display_product(self):
+        TC = Result_Search(self,diver)
+        TC.input_value_search_file('Dress')
+
+
+
+
 
 
 
