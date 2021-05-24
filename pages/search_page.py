@@ -54,3 +54,20 @@ class Result_Search(Base):
         unittest.TestCase().assertEqual(display,
                                         "display all dress",
                                         "False")
+
+
+# --------------------------bai tap 07------------------------------------
+
+class NoResultPage(Base):
+    def __init__(self, driver):
+        super().__init__(driver)
+
+    def input_text_search(self, text):
+        self.write(SearchLocator.search_txb, text)
+
+    def click_search(self):
+        self.click(SearchLocator.search_item)
+
+    def result_failse(self):
+        no_result = self.get_text(SearchLocator.no_result)
+        unittest.TestCase().assertEqual(no_result, 'No results were found for your search "dressSS"', 'Failse')

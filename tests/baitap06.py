@@ -44,6 +44,7 @@ class TestSearchHint(unittest.TestCase):
 
         TC.display_result()
 
+
     def test_tearDown(self):
         self.driver.quit()
 
