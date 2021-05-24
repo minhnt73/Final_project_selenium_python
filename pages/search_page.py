@@ -28,5 +28,5 @@ class SearchHintProduct(Base):
         result = self.find_by_xpaths(SearchLocator.product_hints)
         list_ = []
         for i in result:
-            result.append(self.get_text(i))
-        print(result)
+            list_.append(self.get_text(i))
+        print(list_)
