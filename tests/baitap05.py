@@ -2,12 +2,12 @@ import unittest
 from selenium import webdriver
 from pages.search_page import SearchPage
 # from pages.base import Base
-import chromedriver_autoinstaller
+# import chromedriver_autoinstaller
 
 
 class TestSearch(unittest.TestCase):
     def setUp(self):
-        chromedriver_autoinstaller.install()
+        # chromedriver_autoinstaller.install()
         self.driver = webdriver.Chrome()
         self.driver.get('http://automationpractice.com/index.php')
 

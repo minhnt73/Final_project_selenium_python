@@ -5,6 +5,8 @@ from tests import baitap02
 from tests import baitap03
 from tests import baitap04
 from tests import baitap05
+from tests import baitap06
+from tests import baitap07
 
 if __name__ == "__main__":
     # create the suite from the test classes
@@ -32,6 +34,12 @@ if __name__ == "__main__":
     suite_create_account.addTests(tests.loadTestsFromModule(baitap04))
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap05))
+
+    # suite_create_account.addTests(tests.loadTestsFromModule(baitap06))
+
+    suite_create_account.addTests(tests.loadTestsFromModule(baitap07))
+
+
 
     # -----------------------------------END-------------------------------------#
     # -------------------------------THANK YOU-----------------------------------#

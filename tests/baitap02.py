@@ -1,6 +1,6 @@
 import unittest
 from selenium import webdriver
-import chromedriver_autoinstaller
+# import chromedriver_autoinstaller
 from pages.home_page import HomePage
 from pages.sign_in_page import SignInPage
 from pages.create_account_page import CreateAccountPage
@@ -11,7 +11,7 @@ from pages.newsletter_page import NewsLetterPage
 
 class FinalProject(unittest.TestCase):
     def setUp(self) -> None:
-        chromedriver_autoinstaller.install()
+        # chromedriver_autoinstaller.install()
         self.driver = webdriver.Chrome()
         self.driver.get('http://automationpractice.com/index.php')
         # WebDriverWait(webdriver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="header"]/div[2]/div/div/nav/div[1]/a')))
@@ -23,7 +23,7 @@ class FinalProject(unittest.TestCase):
         TC.wait(10)
 
         TC = SignInPage(self.driver)
-        TC.enter_email_addr('dfhfh@gmail.com')
+        TC.enter_email_addr('dsa@gmail.com')
         TC.click_create_btn()
 
         TC = CreateAccountPage(self.driver)

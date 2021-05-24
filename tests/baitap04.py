@@ -1,7 +1,7 @@
 import unittest
 from pages.contact_us_page import ContactPage
 from selenium import webdriver
-import chromedriver_autoinstaller
+# import chromedriver_autoinstaller
 
 
 # from selenium.webdriver.support.ui import WebDriverWait
@@ -10,7 +10,7 @@ import chromedriver_autoinstaller
 
 class SubmitContactForm(unittest.TestCase):
     def setUp(self):
-        chromedriver_autoinstaller.install()
+        # chromedriver_autoinstaller.install()
         self.driver = webdriver.Chrome()
         self.driver.get('http://automationpractice.com/index.php?controller=contact')
 
