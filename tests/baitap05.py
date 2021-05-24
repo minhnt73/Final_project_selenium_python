@@ -13,7 +13,8 @@ class TestSearch(unittest.TestCase):
 
     def test_enter_value(self):
         TC = SearchPage(self.driver)
-        TC.enter_value_search('dress')
+        TC.enter_value_search("Dress")
+        TC.wait(10)
         # TC = Base(self.driver)
         TC.clear_value_search()
         print('Test baitap05 is completed....')

@@ -15,7 +15,6 @@ if __name__ == "__main__":
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap01))
 
-
     # suite.addTests(tests.loadTestsFromModule(test))
     # suite_create_account.addTests(tests.loadTestsFromTestCase(MyTestCase))
     # alltestNames = tests.getTestCaseNames(MyTestCase)
@@ -34,10 +33,8 @@ if __name__ == "__main__":
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap05))
 
-
-
-
-
+    # -----------------------------------END-------------------------------------#
+    # -------------------------------THANK YOU-----------------------------------#
 
     # run the suite
     runner = unittest.TextTestRunner()

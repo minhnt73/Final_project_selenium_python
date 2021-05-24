@@ -10,6 +10,9 @@ class Base:
     def find_by_xpath(self, locator):
         return self.driver.find_element_by_xpath(locator)
 
+    def find_by_xpaths(self, locator):
+        return self.driver.find_elements_by_xpath(locator)
+
     def click(self, locator):
         return self.find_by_xpath(locator).click()
 
@@ -22,8 +25,12 @@ class Base:
     def clear(self, locator):
         return self.find_by_xpath(locator).clear()
 
-    def get_text(self,locator):
+    def get_text(self, locator):
         return self.find_by_xpath(locator).text
+
+
     # def assert_equal(self,actual, expected, errorMessage):
     #     return self.get_text().assertEqual(actual, expected, errorMessage)
 
+    def wait_time(self, time):
+        return self.wait(time)
