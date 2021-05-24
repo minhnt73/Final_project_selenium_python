@@ -1,9 +1,5 @@
 from locators.search import SearchLocator
 from pages.base import Base
-from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
 import unittest
 
 
@@ -32,6 +28,7 @@ class SearchHintProduct(Base):
             list_.append(self.get_text(i))
         print(list_)
 
+
 class Result_Search(Base):
     def __init__(self, driver):
         super().__init__(driver)
@@ -39,16 +36,21 @@ class Result_Search(Base):
     def input_value_search_file(self, text):
         self.write(SearchLocator.search_txb, text)
 
+    def display_hints(self):
+        result = self.find_by_xpaths(SearchLocator.product_hints)
+        list_ = []
+        for i in result:
+            list_.append(self.get_text(i))
+        print(list_)
+
+    def click_hint1(self):
+        self.click(SearchLocator.hint_ele1)
+
+    def click_search_item(self):
+        self.click(SearchLocator.search_item)
+
     def display_result(self):
-        result = self.find_by_xpaths(SearchLocator.result_search)
-        self.
-
-
-
-
-
-
-
-
-
-
+        display = self.get_text(SearchLocator.result_all_search)
+        unittest.TestCase().assertEqual(display,
+                                        "display all dress",
+                                        "False")
