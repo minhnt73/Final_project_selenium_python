@@ -20,13 +20,14 @@ class SearchHintProduct(Base):
 
     def input_value_search_file(self, text):
         self.write(SearchLocator.search_txb, text)
+        self.wait(10)
 
     def display_hints(self):
+        self.wait(10)
         result = self.find_by_xpaths(SearchLocator.product_hints)
         list_ = []
         for i in result:
             list_.append(self.get_text(i))
-        print(list_)
 
 
 class Result_Search(Base):

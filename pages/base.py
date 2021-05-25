@@ -32,5 +32,3 @@ class Base:
     # def assert_equal(self,actual, expected, errorMessage):
     #     return self.get_text().assertEqual(actual, expected, errorMessage)
 
-    def wait_time(self, time):
-        return self.wait(time)

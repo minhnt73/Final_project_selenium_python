@@ -1,12 +1,6 @@
 from unittest.suite import TestSuite
 import unittest
-from tests import baitap01
-from tests import baitap02
-from tests import baitap03
-from tests import baitap04
-from tests import baitap05
-from tests import baitap06
-from tests import baitap07
+from tests import baitap01, baitap02, baitap03, baitap04, baitap05, baitap07
 
 if __name__ == "__main__":
     # create the suite from the test classes

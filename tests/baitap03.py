@@ -1,9 +1,6 @@
 import unittest
 from selenium import webdriver
 # import chromedriver_autoinstaller
-from pages.home_page import HomePage
-from pages.sign_in_page import SignInPage
-from pages.create_account_page import CreateAccountPage
 from pages.newsletter_page import NewsLetterPage
 
 

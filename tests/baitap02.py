@@ -4,7 +4,8 @@ from selenium import webdriver
 from pages.home_page import HomePage
 from pages.sign_in_page import SignInPage
 from pages.create_account_page import CreateAccountPage
-from pages.newsletter_page import NewsLetterPage
+
+
 # from selenium.webdriver.support.ui import WebDriverWait
 # from selenium.webdriver.support import expected_conditions as EC
 # from selenium.webdriver.common.by import By

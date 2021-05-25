@@ -1,6 +1,6 @@
 class SearchLocator:
     search_txb = '//input[@id="search_query_top"]'
-    product_hints = '//div[@class="ac_results"]//li'
+    product_hints = '//div[@class="ac_results"]'
 
     # check result
     hint_ele1 = '//li[@class = "ac_even ac_over"]'
