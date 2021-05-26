@@ -1,6 +1,6 @@
 from unittest.suite import TestSuite
 import unittest
-from tests import baitap01, baitap02, baitap03, baitap04, baitap05, baitap07
+from tests import baitap01, baitap02, baitap03, baitap04, baitap05, baitap07,baitap08,baitap06
 
 if __name__ == "__main__":
     # create the suite from the test classes
@@ -29,9 +29,10 @@ if __name__ == "__main__":
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap05))
 
-    # suite_create_account.addTests(tests.loadTestsFromModule(baitap06))
+    suite_create_account.addTests(tests.loadTestsFromModule(baitap06))
 
     suite_create_account.addTests(tests.loadTestsFromModule(baitap07))
+    suite_create_account.addTests(tests.loadTestsFromModule(baitap08))
 
 
 

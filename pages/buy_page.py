@@ -8,7 +8,7 @@ import time
 import unittest
 
 
-class BuyPage(Base):
+class baitap8Page(Base):
     def __init__(self, driver):
         super().__init__(driver)
 
@@ -54,10 +54,10 @@ class BuyPage(Base):
         self.click(BuyLocator.proceed_to_checkout_summary_btn)
         self.wait(10)
 
-    def confirm_user(self,text1,text2):
-        self.write(BuyLocator.email_address,text1)
+    def confirm_user(self, text1, text2):
+        self.write(BuyLocator.email_address, text1)
         self.wait(5)
-        self.write(BuyLocator.password_txtb,text2)
+        self.write(BuyLocator.password_txtb, text2)
         self.wait(10)
         self.click(BuyLocator.signin_btn)
 
@@ -78,3 +78,92 @@ class BuyPage(Base):
         unittest.TestCase().assertEqual(display,
                                         "Your order on My Store is complete.",
                                         "False")
+
+
+# -------------------------------Bài tap 09---------------------------------------------
+class baitap9Page(Base):
+    def __init__(self, driver):
+        super().__init__(driver)
+
+    def select_products(self):
+        self.wait(10)
+        self.click(BuyLocator.product_1)
+        self.wait(5)
+        self.click(BuyLocator.add_to_cart)
+        self.wait(5)
+        self.click(BuyLocator.continue_shopping)
+        self.click(BuyLocator.icon_home)
+        self.wait(5)
+        self.click(BuyLocator.product_2)
+        self.wait(5)
+        self.click(BuyLocator.add_to_cart)
+        self.wait(5)
+        self.click(BuyLocator.continue_shopping)
+        self.wait(5)
+        self.click(BuyLocator.icon_home)
+        self.wait(5)
+        self.click(BuyLocator.product_3)
+        self.wait(5)
+        self.click(BuyLocator.add_to_cart)
+        self.wait(5)
+        self.click(BuyLocator.continue_shopping)
+        self.wait(5)
+        self.click(BuyLocator.icon_home)
+        self.wait(5)
+        self.click(BuyLocator.product_4)
+        self.wait(5)
+        self.click(BuyLocator.add_to_cart)
+        self.wait(5)
+        self.click(BuyLocator.continue_shopping)
+        self.wait(5)
+        self.click(BuyLocator.icon_home)
+        self.wait(5)
+        # self.click(BuyLocator.product_5)
+        # self.wait(5)
+        # self.click(BuyLocator.add_to_cart)
+
+    def change_amount_prod(self):
+        self.click(BuyLocator.cart)
+        self.wait(10)
+        self.click(BuyLocator.add_icon)
+        self.wait(5)
+        self.click(BuyLocator.add_icon)
+        self.wait(5)
+        self.click(BuyLocator.add_icon)
+        self.wait(5)
+        self.click(BuyLocator.delete_icon)
+
+    def check_price(self):
+
+        # price_01 = self.get_text(BuyLocator.price_1)
+        # price_01_ = price_01.replace("$", "")
+        price_01 = self.get_text(BuyLocator.price_1)
+        price_01_ = price_01.replace("$", "")
+        print(price_01_)
+        price_02 = self.get_text(BuyLocator.price_2)
+        price_02_ = price_02.replace("$", "")
+        print(price_02_)
+        price_03 = self.get_text(BuyLocator.price_3)
+        price_03_ = price_03.replace("$", "")
+        print(price_03_)
+        total_exp = self.get_text(BuyLocator.total_price_exp)
+        total_exp_ = total_exp.replace("$", "")
+        print(total_exp_)
+        if float(price_02_) + float(price_03_) + float(price_01_) + 2.00 == float(total_exp_):
+            print("True")
+        else:
+            print("Fail")
+
+    def check_out(self, text1, text2):
+        self.click(BuyLocator.proceed_checkout)
+        self.wait(5)
+        self.write(BuyLocator.email_address, text1)
+        self.wait(5)
+        self.write(BuyLocator.password_txtb, text2)
+        self.click(BuyLocator.signin_btn)
+        self.wait(5)
+        self.click(BuyLocator.proceed_to_checkout_address_btn)
+        self.wait(5)
+        self.click(BuyLocator.proceed_checkout_shipping)
+
+
