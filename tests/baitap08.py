@@ -17,8 +17,9 @@ class BuyProduct(unittest.TestCase):
         TC.select_products()
         TC.compare_price()
         TC.checkout_product_step01()
-        TC.confirm_user()
+        TC.confirm_user('minh@gmail.com','Minh123')
         TC.checkout_product_final()
+        TC.message_display()
 
 
 

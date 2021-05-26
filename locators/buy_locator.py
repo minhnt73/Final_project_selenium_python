@@ -27,6 +27,8 @@ class BuyLocator:
 
     proceed_to_checkout_summary_btn = '//p[@class = "cart_navigation clearfix"]//a[@title= "Proceed to checkout"]'
 
+    proceed_to_checkout_address_btn = '//*[@id="center_column"]/form/p/button/span'
+
     continue_shopping_btn = '//span[@title = "Continue shopping"]'
 
     icon_home = '//i[@class= "icon-home"]'
@@ -37,13 +39,15 @@ class BuyLocator:
 
     signin_btn = '//button[@id = "SubmitLogin"]'
 
-    agree_checkbox = '//input[@id = "cgv"]'
+    agree_checkbox = '//input[@id ="cgv"]'
+
+    proceed_to_checkout_shipping_btn = '//*[@id="form"]/p/button/span'
 
     pay_by_bank = '//a[@title = "Pay by bank wire"]'
 
     i_confirm_my_oder = '//button[@class= "button btn btn-default button-medium"]'
 
-    mess_confirm = '//p[@class= "alert alert-success"]'
+    mess_confirm = '//*[@id="center_column"]/div/p/strong'
 
     product_1_price = "//tr[1]/td[6]"
     product_2_price = "//tr[2]/td[6]"

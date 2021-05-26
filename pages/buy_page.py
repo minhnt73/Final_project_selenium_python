@@ -54,22 +54,25 @@ class BuyPage(Base):
         self.click(BuyLocator.proceed_to_checkout_summary_btn)
         self.wait(10)
 
-    def confirm_user(self):
-        self.write(BuyLocator.email_address)
+    def confirm_user(self,text1,text2):
+        self.write(BuyLocator.email_address,text1)
         self.wait(5)
-        self.write(BuyLocator.password_txtb)
+        self.write(BuyLocator.password_txtb,text2)
         self.wait(10)
         self.click(BuyLocator.signin_btn)
 
     def checkout_product_final(self):
-        self.click(BuyLocator.proceed_to_checkout_summary_btn)
-        self.wait(10)
-        self.click(BuyLocator.proceed_to_checkout_summary_btn)
+        self.click(BuyLocator.proceed_to_checkout_address_btn)
         self.wait(10)
         self.click(BuyLocator.agree_checkbox)
         self.wait(10)
+        self.click(BuyLocator.proceed_to_checkout_shipping_btn)
+
+        self.wait(10)
         self.click(BuyLocator.pay_by_bank)
         self.click(BuyLocator.i_confirm_my_oder)
+
+    def message_display(self):
 
         display = self.get_text(BuyLocator.mess_confirm)
         unittest.TestCase().assertEqual(display,
