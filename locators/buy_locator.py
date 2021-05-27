@@ -82,5 +82,10 @@ class BuyLocator:
     popup_mess = '//p[@class = "fancybox-error"]'
     popup_mess_close = '//a[@title= "Close"]'
 
-
-
+    # bai 10
+    add_to_cart_sale20 = '//*[@id="homefeatured"]/li[7]/div//span[contains(text(), "Add to cart")]'
+    proceed_check_btn = '//a[@title = "Proceed to checkout"]'
+    proceed_check_cart_btn = '//p[@class = "cart_navigation clearfix"]//a[@title = "Proceed to checkout"]'
+    proceed_check_adress_btn = '//*[@id="center_column"]/form/p/button/span'
+    proceed_check_shipping_btn = '//*[@id="form"]/p/button/span'
+    message = '//p[@class = "cheque-indent"]//strong[@class = "dark"]'

@@ -4,6 +4,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.webdriver.common.action_chains import ActionChains
 import time
 import unittest
 
@@ -178,5 +179,44 @@ class baitap9Page(Base):
         self.wait(5)
         self.click(BuyLocator.i_confirm_my_oder)
         self.wait(5)
-        message_comfirm = self.get_text(BuyLocator.mess_confirm)
-        unittest.TestCase().assertEqual(message_comfirm, 'Your order on My Store is complete.', 'Fail')
+        message_confirm = self.get_text(BuyLocator.mess_confirm)
+        unittest.TestCase().assertEqual(message_confirm, 'Your order on My Store is complete.', 'Fail')
+
+
+# ---------------------------------BÀI TẬP 10-----------------------------------------------
+
+class baitap10Page(Base):
+    def __init__(self, driver):
+        super(baitap10Page, self).__init__(driver)
+
+    def select_product_20per(self):
+        self.wait(10)
+        element = self.driver.find_element_by_xpath('//*[@id="homefeatured"]/li[7]/div/div[1]/div/a[1]/img')
+        hov = ActionChains(self.driver).move_to_element(element)
+        hov.perform()
+        self.wait(10)
+        self.click(BuyLocator.add_to_cart_sale20)
+        self.wait(10)
+        self.click(BuyLocator.proceed_check_btn)
+        self.wait(5)
+
+    def check_out(self, text1, text2):
+        self.wait(5)
+        self.click(BuyLocator.proceed_check_cart_btn)
+        self.wait(5)
+        self.write(BuyLocator.email_address, text1)
+        self.write(BuyLocator.password_txtb, text2)
+        self.click(BuyLocator.signin_btn)
+        self.wait(5)
+        self.click(BuyLocator.proceed_check_adress_btn)
+        self.wait(5)
+        self.click(BuyLocator.agree_checkbox)
+        self.wait(5)
+        self.click(BuyLocator.proceed_check_shipping_btn)
+        self.wait(5)
+        self.click(BuyLocator.pay_by_bank)
+        self.wait(5)
+        self.click(BuyLocator.i_confirm_my_oder)
+        self.wait(5)
+        mess = self.get_text(BuyLocator.message)
+        unittest.TestCase().assertEqual(mess, 'Your order on My Store is complete.', 'Fail')

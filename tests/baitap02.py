@@ -24,7 +24,7 @@ class FinalProject(unittest.TestCase):
         TC.wait(10)
 
         TC = SignInPage(self.driver)
-        TC.enter_email_addr('dsa@gmail.com')
+        TC.enter_email_addr('ghfdhj@gmail.com')
         TC.click_create_btn()
 
         TC = CreateAccountPage(self.driver)
