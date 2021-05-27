@@ -78,6 +78,9 @@ class BuyLocator:
     # icon add [+]
     add_icon = '//*[@id="cart_quantity_up_1_1_0_0"]/span/i'
     delete_icon = '//a[@id = "1_1_0_0"]//i[@class = "icon-trash"]'
+    # popup mess
+    popup_mess = '//p[@class = "fancybox-error"]'
+    popup_mess_close = '//a[@title= "Close"]'
 
 
 
