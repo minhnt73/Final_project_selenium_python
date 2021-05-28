@@ -16,6 +16,7 @@ class baitap12(unittest.TestCase):
         TC.ClickDetailProduct()
         TC.ShareTwitter()
         time.sleep(10)
+        prin("Test bai tap 12 completed.....")
 
 
 if __name__ == '__main__':

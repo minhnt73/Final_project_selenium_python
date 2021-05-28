@@ -18,3 +18,12 @@ class ProductDetailLocator:
     id_twitter = '//input[@name = "session[username_or_email]"]'
     pw_twitter = "//input[@name = 'session[password]']"
     login_button = "//span[contains(text(), 'Log in')]"
+
+    # -------------------------------BAI TAP 13 ----------------------------------------
+
+    product = '//*[@id="homefeatured"]/li[1]/div/div[1]/div/a[1]/img'
+    write_a_review = '//ul[@class="comments_advices"]'
+    title_field = '//input[@id = "comment_title"]'
+    comment = '//textarea[@id = "content"]'
+    send_button = '//button[@id = "submitNewMessage"]'
+    message_noti = '//*[@id="product"]/div[2]/div/div/div/p[1]'

@@ -16,6 +16,9 @@ class Base:
     def click(self, locator):
         return self.find_by_xpath(locator).click()
 
+    def clickTest(self, css):
+        return self.driver.find_element_by_css_selector(css)
+
     def write(self, locator, text):
         return self.find_by_xpath(locator).send_keys(text)
 

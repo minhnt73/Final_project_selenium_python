@@ -1,3 +1,5 @@
+from selenium.webdriver import ActionChains
+
 from locators.product_detail_loactor import ProductDetailLocator
 from pages.base import Base
 import unittest
@@ -5,6 +7,8 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 import time
+from locators.locator_home_page import HomePageLct
+from locators.buy_locator import BuyLocator
 
 
 class ProductDetailPage(Base):
@@ -86,6 +90,35 @@ class ShareToTwitterPage(Base):
         time.sleep(5)
         self.click(ProductDetailLocator.twitter_btn_page)
 
+    # ---------------------------------- BAI TAP 13 --------------------------------
 
 
+class WriteAComment(Base):
+    def __init__(self, driver):
+        super().__init__(driver)
 
+    def login(self, value1, value2):
+        self.click(HomePageLct.sign_in_btn)
+        self.write(BuyLocator.email_address, value1)
+        self.write(BuyLocator.password_txtb, value2)
+        self.click(BuyLocator.signin_btn)
+        self.click(BuyLocator.icon_home)
+
+    def SelectProduct(self):
+        self.click(ProductDetailLocator.product)
+
+    def WriteComment(self, text1, text2):
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, '//a[@class="open-comment-form"]'))).click()
+        self.write(ProductDetailLocator.title_field, text1)
+        self.write(ProductDetailLocator.comment, text2)
+        time.sleep(3)
+        self.click(ProductDetailLocator.send_button)
+
+    def MessageSuccess(self):
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, '//*[@id="product"]/div[2]/div/div/div/p[1]')))
+        mess = self.get_text(ProductDetailLocator.message_noti)
+        unittest.TestCase().assertEqual(mess,
+                                        'Your comment has been added and will be available once approved by a moderator',
+                                        'Fail')
