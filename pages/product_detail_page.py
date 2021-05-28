@@ -122,3 +122,38 @@ class WriteAComment(Base):
         unittest.TestCase().assertEqual(mess,
                                         'Your comment has been added and will be available once approved by a moderator',
                                         'Fail')
+
+
+# -----------------------------------BAI TAP 14 -------------------------------------------------
+
+class SenToFriend(Base):
+    def __init__(self, driver):
+        super().__init__(driver)
+
+    def select_prod(self):
+        self.click(ProductDetailLocator.product)
+
+    def send_mail(self, text1, text2):
+        self.click(ProductDetailLocator.send_to_a_friend)
+        self.write(ProductDetailLocator.name_of_your_friend, text1)
+        self.write(ProductDetailLocator.email, text2)
+        self.click(ProductDetailLocator.send)
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, '//p[contains(text(),"Your e-mail has been sent successfully")]')))
+        self.wait(10)
+        message = self.get_text(ProductDetailLocator.mess_conf)
+        unittest.TestCase().assertEqual(message, 'Your e-mail has been sent successfully', 'Fail')
+
+    def check_email(self, text, text1):
+        self.driver.execute_script('''window.open("https://mail.google.com/","_blank");''')
+        self.driver.switch_to.window(self.driver.window_handles[0])
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        self.write(ProductDetailLocator.id_email, text)
+        self.click(ProductDetailLocator.continue_button)
+        WebDriverWait(self.driver, 10).until(
+            EC.element_to_be_clickable((By.XPATH, "//input[@type = 'password']")))
+        self.wait(10)
+        self.write(ProductDetailLocator.pw_email, text)
+        self.click(ProductDetailLocator.continue_button)
+
+

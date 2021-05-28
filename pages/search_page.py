@@ -25,10 +25,10 @@ class SearchHintProduct(Base):
     def display_hints(self):
         self.wait(10)
         result = self.find_by_xpaths(SearchLocator.product_hints)
-        list_ = []
+        list = []
         for i in result:
-            list_.append(self.get_text(i))
-
+            list.append(i.text)
+        print(list)
 
 class Result_Search(Base):
     def __init__(self, driver):

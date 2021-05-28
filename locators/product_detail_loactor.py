@@ -27,3 +27,17 @@ class ProductDetailLocator:
     comment = '//textarea[@id = "content"]'
     send_button = '//button[@id = "submitNewMessage"]'
     message_noti = '//*[@id="product"]/div[2]/div/div/div/p[1]'
+
+    #-------------------------------BAI TAP 14 --------------------------------------------
+
+    send_to_a_friend = '//a[contains(text(),"Send to a friend")]'
+    name_of_your_friend = '//input[@id = "friend_name"]'
+    email = '//input[@id = "friend_email"]'
+    send = '//button[@id = "sendEmail"]'
+    mess_conf = '//p[contains(text(),"Your e-mail has been sent successfully")]'
+
+    id_email = "//input[@id = 'identifierId']"
+    continue_button = "//span[contains(text(), 'Tiếp theo')]"
+    pw_email = "//input[@type = 'password']"
+
+
