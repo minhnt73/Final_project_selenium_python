@@ -64,3 +64,28 @@ class ProductDetailPage(Base):
             print("True")
         else:
             print("False")
+
+    # -----------------------------BAI TAP 12 ---------------------------------------------
+
+
+class ShareToTwitterPage(Base):
+    def __init__(self, driver):
+        super().__init__(driver)
+
+    def ClickDetailProduct(self):
+        self.click(ProductDetailLocator.product_img)
+        self.wait(5)
+
+    def ShareTwitter(self):
+        self.click(ProductDetailLocator.share_twitter_btn)
+        self.wait(5)
+        self.driver.switch_to.window(self.driver.window_handles[1])
+        self.write(ProductDetailLocator.id_twitter, "NTM731990")
+        self.write(ProductDetailLocator.pw_twitter, "Truongminh1990")
+        self.click(ProductDetailLocator.login_button)
+        time.sleep(5)
+        self.click(ProductDetailLocator.twitter_btn_page)
+
+
+
+

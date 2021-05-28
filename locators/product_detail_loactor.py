@@ -11,3 +11,10 @@ class ProductDetailLocator:
     close_icon_popup = '//span[@title = "Close window"]'
     cart_btn = '//div[@class = "shopping_cart"]//a[@title = "View my shopping cart"]'
     product_in_cart = '//*[@id="product_1_1_0_0"]/td[2]/p'
+    # ------------------------------BAI TAP 12_____________________________________
+
+    share_twitter_btn = '//button[@class= "btn btn-default btn-twitter"]'
+    twitter_btn_page = '//*[@id="react-root"]/div/div/div[2]/main/div/div/div[2]/div/div/div/div[3]/div/div/span/span'
+    id_twitter = '//input[@name = "session[username_or_email]"]'
+    pw_twitter = "//input[@name = 'session[password]']"
+    login_button = "//span[contains(text(), 'Log in')]"
