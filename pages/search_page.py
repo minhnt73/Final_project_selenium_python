@@ -28,7 +28,12 @@ class SearchHintProduct(Base):
         list = []
         for i in result:
             list.append(i.text)
-        print(list)
+
+        data_search = self.get_text(SearchLocator.search_txb)
+        if data_search in list:
+            print("True")
+        else:
+            print("False")
 
 class Result_Search(Base):
     def __init__(self, driver):
@@ -38,11 +43,17 @@ class Result_Search(Base):
         self.write(SearchLocator.search_txb, text)
 
     def display_hints(self):
+        self.wait(10)
         result = self.find_by_xpaths(SearchLocator.product_hints)
-        list_ = []
+        list = []
         for i in result:
-            list_.append(self.get_text(i))
-        print(list_)
+            list.append(i.text)
+
+        data_search = self.get_text(SearchLocator.search_txb)
+        if data_search in list:
+            print("True")
+        else:
+            print("False")
 
     def click_hint1(self):
         self.click(SearchLocator.hint_ele1)
@@ -51,10 +62,16 @@ class Result_Search(Base):
         self.click(SearchLocator.search_item)
 
     def display_result(self):
-        display = self.get_text(SearchLocator.result_all_search)
-        unittest.TestCase().assertEqual(display,
-                                        "display all dress",
-                                        "False")
+        display = self.find_by_xpaths(SearchLocator.result_all_search)
+        list = []
+        for i in display:
+            list.append(i.text)
+        print(list)
+        data_search = self.get_text(SearchLocator.search_txb)
+        if data_search in list:
+            print("True")
+        else:
+            print("False")
 
 
 # --------------------------bai tap 07------------------------------------
